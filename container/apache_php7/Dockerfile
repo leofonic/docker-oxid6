@@ -1,4 +1,4 @@
-FROM php:7.1-apache
+FROM php:7.2-apache
 
 MAINTAINER module@proudcommerce.com
 
@@ -40,3 +40,7 @@ COPY ./files/config.inc.php /var/www/config.inc.php
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
+
+# shell
+RUN cp /bin/bash /bin/sh
+RUN source ~/.bashrc
